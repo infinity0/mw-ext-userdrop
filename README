@@ -1,5 +1,15 @@
+## Overview
+
 MediaWiki extension: User Drop
 
 View users' statistics (atm just editcount) and drop them based on this.
-
 Code based on the "User Merge and Delete" extension, and Special:Listusers
+
+## Dependencies
+
+For the DELETE functionality, "User Merge and Delete" needs to be installed.
+
+## Links
+
+User Merge and Delete
+:	http://www.mediawiki.org/wiki/Extension:User_Merge_and_Delete
