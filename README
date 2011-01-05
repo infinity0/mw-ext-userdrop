@@ -1,0 +1,5 @@
+MediaWiki extension: User Drop
+
+View users' statistics (atm just editcount) and drop them based on this.
+
+Code based on the "User Merge and Delete" extension, and Special:Listusers

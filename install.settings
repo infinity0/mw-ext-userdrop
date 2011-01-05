@@ -1,0 +1,4 @@
+require_once( "$IP/extensions/UserDrop/UserDrop.php" );
+# Assign the userdrop right to a usergroup, i.e. to the bureaucrats:
+$wgGroupPermissions['bureaucrat']['userdrop'] = true;
+
