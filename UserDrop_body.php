@@ -22,6 +22,10 @@ class UsersDropPager extends UsersPager {
 		parent::__construct();
 	}
 
+	function getTitle() {
+		return Title::newFromText('Special:UserDrop');
+	}
+
 	function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$conds = array();
@@ -112,7 +116,7 @@ class UsersDropPager extends UsersPager {
 		# Form tag
 		$out  = Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'id' => 'mw-listusers-form' ) ) .
 			Xml::fieldset( wfMsg( 'listusers' ) ) .
-			Xml::hidden( 'title', $self->getPrefixedDbKey() );
+			Html::Hidden( 'title', $self->getPrefixedDbKey() );
 
 		# Username field
 		$out .= Xml::label( wfMsg( 'listusersfrom' ), 'offset' ) . ' ' .
@@ -132,7 +136,7 @@ class UsersDropPager extends UsersPager {
 		wfRunHooks( 'SpecialListusersHeaderForm', array( $this, &$out ) );
 
 		# Submit button and form bottom
-		$out .= Xml::hidden( 'limit', $this->mLimit );
+		$out .= Html::Hidden( 'limit', $this->mLimit );
 		$out .= Xml::submitButton( wfMsg( 'allpagessubmit' ) );
 		wfRunHooks( 'SpecialListusersHeader', array( $this, &$out ) );
 		$out .= Xml::closeElement( 'fieldset' ) .
